@@ -1,0 +1,724 @@
+<title>Gayeong Kim | Luxury Editorial Nursing Portfolio</title>
+    <!-- Tailwind CSS 로드 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: 우아한 필기체(Great Vibes, Pinyon Script), 하이엔드 세리프(Cormorant Garamond), 한글(Pretendard, Noto Sans KR) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Noto+Sans+KR:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind 커스텀 설정 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        script: ['"Great Vibes"', 'cursive'],
+                        pinyon: ['"Pinyon Script"', 'cursive'],
+                    },
+                    colors: {
+                        obsidian: {
+                            950: '#0B0B0D',
+                            900: '#101014',
+                            850: '#141418',
+                            800: '#1B1B22',
+                        },
+                        gold: {
+                            100: '#FAF0D1',
+                            200: '#F3E5AB',
+                            300: '#E5C76B',
+                            400: '#D4AF37',
+                            500: '#C5A059',
+                            600: '#AA822B',
+                            700: '#7D5E1D',
+                        }
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 0 45px -10px rgba(212, 175, 55, 0.25)',
+                        'gold-card': '0 16px 40px -12px rgba(0, 0, 0, 0.85), 0 0 24px -6px rgba(212, 175, 55, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0B0D;
+            color: #E4E4E7;
+            word-break: keep-all;
+            overflow-x: hidden;
+        }
+
+        /* 샴페인 & 메탈릭 골드 그라데이션 텍스트 */
+        .text-gold-metallic {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 45%, #C5A059 75%, #F3E5AB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* 상단 글래스모피즘 블랙 네비게이션 */
+        .glass-obsidian {
+            background: rgba(11, 11, 13, 0.84);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+        }
+
+        /* 글래스모피즘 + 럭셔리 골드 카드 & 쉬머 효과 */
+        .luxury-card {
+            background: linear-gradient(155deg, rgba(24, 24, 30, 0.78) 0%, rgba(14, 14, 18, 0.92) 100%);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(212, 175, 55, 0.24);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.45s ease, box-shadow 0.45s ease;
+        }
+
+        .luxury-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(
+                115deg,
+                transparent 0%,
+                rgba(243, 229, 171, 0.05) 45%,
+                rgba(212, 175, 55, 0.16) 50%,
+                rgba(243, 229, 171, 0.05) 55%,
+                transparent 100%
+            );
+            transform: skewX(-20deg);
+            transition: left 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+            pointer-events: none;
+        }
+
+        .luxury-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(243, 229, 171, 0.65);
+            box-shadow: 0 22px 48px -12px rgba(0, 0, 0, 0.95), 0 0 32px -4px rgba(212, 175, 55, 0.24);
+        }
+
+        .luxury-card:hover::before {
+            left: 150%;
+        }
+
+        /* 얇은 이중 골드 테두리 및 은은한 골드 글로우 프로필 프레임 */
+        .portrait-double-frame {
+            position: relative;
+            border-radius: 9999px 9999px 26px 26px;
+            padding: 7px;
+            border: 1px solid rgba(212, 175, 55, 0.55);
+            background: linear-gradient(155deg, rgba(212, 175, 55, 0.16), rgba(11, 11, 13, 0.92) 55%, rgba(197, 160, 89, 0.22));
+            box-shadow: 0 28px 65px -15px rgba(0, 0, 0, 0.95), 0 0 50px -8px rgba(212, 175, 55, 0.28);
+        }
+
+        .portrait-inner {
+            border-radius: 9999px 9999px 20px 20px;
+            overflow: hidden;
+            border: 1px solid rgba(243, 229, 171, 0.65);
+            position: relative;
+        }
+
+        /* 골드 헤어라인 디바이더 */
+        .gold-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.48) 50%, transparent 100%);
+        }
+
+        /* 스크롤 등장 애니메이션 */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 은은한 에디토리얼 텍스처 */
+        .bg-editorial-texture {
+            background-image: 
+                radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px),
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.06), transparent 65%);
+            background-size: 32px 32px, 100% 100%;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-400/30 selection:text-gold-200">
+
+    <!-- 상단 고정 글래스모피즘 블랙 네비게이션 -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-obsidian transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 py-3.5 flex items-center justify-between">
+            <!-- 필기체 이니셜 로고 -->
+            <a href="#profile" class="flex items-center gap-3 group">
+                <span class="w-10 h-10 rounded-full border border-gold-400/50 bg-obsidian-900 flex items-center justify-center shadow-gold-glow group-hover:border-gold-200 transition-colors">
+                    <span class="font-script text-2xl text-gold-metallic pt-1 pr-0.5">G.K</span>
+                </span>
+                <div class="flex flex-col">
+                    <span class="font-serif italic text-lg tracking-wider text-gold-200 leading-none">Gayeong Kim</span>
+                    <span class="text-[10px] tracking-[0.26em] uppercase text-zinc-400 mt-1">Nursing Portfolio</span>
+                </div>
+            </a>
+
+            <!-- 데스크톱 6개 영문 섹션 링크 -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                <a href="#profile" class="px-3.5 py-2 font-serif italic text-base tracking-wide text-zinc-300 hover:text-gold-200 transition-colors">Profile</a>
+                <a href="#about" class="px-3.5 py-2 font-serif italic text-base tracking-wide text-zinc-300 hover:text-gold-200 transition-colors">About Me</a>
+                <a href="#interests" class="px-3.5 py-2 font-serif italic text-base tracking-wide text-zinc-300 hover:text-gold-200 transition-colors">Interests</a>
+                <a href="#strengths" class="px-3.5 py-2 font-serif italic text-base tracking-wide text-zinc-300 hover:text-gold-200 transition-colors">Strengths</a>
+                <a href="#hobbies" class="px-3.5 py-2 font-serif italic text-base tracking-wide text-zinc-300 hover:text-gold-200 transition-colors">Hobbies</a>
+                <a href="#goal" class="ml-2 px-5 py-1.5 rounded-full border border-gold-400/65 bg-gold-400/10 font-serif italic text-base tracking-wider text-gold-200 hover:bg-gold-400 hover:text-obsidian-950 transition-all duration-300">
+                    My Goal
+                </a>
+            </nav>
+
+            <!-- 모바일 메뉴 버튼 -->
+            <button id="mobile-menu-btn" aria-label="메뉴 열기" class="md:hidden p-2.5 rounded-full border border-gold-400/35 text-gold-300 hover:bg-gold-400/10 focus:outline-none">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- 모바일 드롭다운 메뉴 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-obsidian-950/95 border-b border-gold-400/25 px-6 pt-3 pb-6 space-y-1.5 backdrop-blur-xl">
+            <a href="#profile" class="mobile-link block py-2.5 px-4 rounded-xl font-serif italic text-lg text-zinc-200 hover:text-gold-200 hover:bg-gold-400/10">Profile</a>
+            <a href="#about" class="mobile-link block py-2.5 px-4 rounded-xl font-serif italic text-lg text-zinc-200 hover:text-gold-200 hover:bg-gold-400/10">About Me</a>
+            <a href="#interests" class="mobile-link block py-2.5 px-4 rounded-xl font-serif italic text-lg text-zinc-200 hover:text-gold-200 hover:bg-gold-400/10">Interests</a>
+            <a href="#strengths" class="mobile-link block py-2.5 px-4 rounded-xl font-serif italic text-lg text-zinc-200 hover:text-gold-200 hover:bg-gold-400/10">Strengths</a>
+            <a href="#hobbies" class="mobile-link block py-2.5 px-4 rounded-xl font-serif italic text-lg text-zinc-200 hover:text-gold-200 hover:bg-gold-400/10">Hobbies</a>
+            <a href="#goal" class="mobile-link block py-2.5 px-4 mt-2 rounded-xl border border-gold-400/45 bg-gold-400/10 font-serif italic text-lg text-gold-200 text-center">My Goal</a>
+        </div>
+    </header>
+
+    <main class="pt-20 bg-editorial-texture">
+        <!-- 1. HERO & PROFILE SECTION -->
+        <section id="profile" class="relative py-16 sm:py-24 lg:py-28 px-5 sm:px-8 overflow-hidden">
+            <!-- 은은한 금빛 빛 번짐 효과 -->
+            <div class="absolute top-10 right-1/4 -z-10 w-80 h-80 sm:w-[30rem] sm:h-[30rem] bg-gold-400/12 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute bottom-0 left-10 -z-10 w-72 h-72 bg-gold-500/10 rounded-full blur-[110px] pointer-events-none"></div>
+
+            <div class="max-w-6xl mx-auto">
+                <!-- 상단 에디토리얼 이슈 라벨 -->
+                <div class="flex items-center justify-center lg:justify-start gap-3 mb-8 sm:mb-10">
+                    <span class="h-px w-10 bg-gold-400/60"></span>
+                    <span class="font-serif italic text-sm sm:text-base tracking-[0.24em] uppercase text-gold-200">
+                        Profile · Luxury Editorial Edition
+                    </span>
+                    <span class="h-px w-10 bg-gold-400/60"></span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                    <!-- 좌측: 얇은 이중 골드 테두리 & 골드 글로우 프로필 사진 (img3.png) -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative max-w-[295px] sm:max-w-[335px] w-full group">
+                            <!-- 바깥쪽 은은한 헤어라인 오라 링 -->
+                            <div class="absolute -inset-3.5 rounded-t-full rounded-b-[32px] border border-gold-400/20 pointer-events-none"></div>
+                            
+                            <div id="portrait-trigger" role="button" tabindex="0" title="클릭하여 프로필 사진 선택 또는 변경" class="portrait-double-frame cursor-pointer transition-transform duration-500 hover:scale-[1.01]">
+                                <div class="portrait-inner aspect-[3/4] bg-obsidian-950">
+                                    <img 
+                                        id="profile-photo"
+                                        src="img3.png" 
+                                        alt="단국대학교 간호학과 김가영 프로필 사진" 
+                                        class="w-full h-full object-cover object-top contrast-[1.04] brightness-[0.98] group-hover:scale-105 transition-transform duration-700"
+                                        onerror="handleProfileImageError(this)"
+                                    >
+                                    <!-- 미리보기 격리 환경용 클릭 안내 오버레이 -->
+                                    <div id="photo-fallback-overlay" class="hidden absolute inset-0 bg-obsidian-950/88 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center transition-opacity duration-300">
+                                        <div class="w-12 h-12 rounded-full border border-gold-400/50 bg-gold-400/10 text-gold-300 flex items-center justify-center mb-3">
+                                            <i data-lucide="camera" class="w-5 h-5"></i>
+                                        </div>
+                                        <p class="font-script text-3xl text-gold-200 mb-1">Gayeong Kim</p>
+                                        <p class="text-xs text-zinc-300 leading-relaxed mb-3">
+                                            브라우저 미리보기 보안 정책으로 로컬 파일이 제한되었습니다.<br>프레임을 클릭해 사진을 바로 불러오세요.
+                                        </p>
+                                        <span class="px-4 py-1.5 rounded-full border border-gold-400/60 bg-gold-400/15 text-[11px] font-serif italic tracking-wider text-gold-200">
+                                            Click to Load Photo
+                                        </span>
+                                    </div>
+                                    <!-- 호버 시 사진 변경 힌트 배지 -->
+                                    <div id="photo-hover-hint" class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute top-4 right-4 bg-obsidian-950/80 border border-gold-400/45 px-3 py-1 rounded-full backdrop-blur-md flex items-center gap-1.5 pointer-events-none">
+                                        <i data-lucide="image-plus" class="w-3.5 h-3.5 text-gold-300"></i>
+                                        <span class="text-[11px] text-gold-200 tracking-wide">사진 변경</span>
+                                    </div>
+                                    <!-- 하단 은은한 다크 비네팅 그라데이션 -->
+                                    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-obsidian-950/80 via-obsidian-950/25 to-transparent pointer-events-none"></div>
+                                </div>
+                            </div>
+                            <input type="file" id="profile-file-input" accept="image/*" class="hidden">
+
+                            <!-- 플로팅 필기체 시그니처 배지 -->
+                            <div class="absolute -bottom-4 -right-3 sm:-right-5 bg-obsidian-900/95 border border-gold-400/55 px-5 py-2 rounded-full shadow-gold-glow backdrop-blur-md pointer-events-none">
+                                <span class="font-pinyon text-2xl sm:text-3xl text-gold-metallic tracking-wide">Future RN</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 우측: 영문 필기체 & 세리프 중심 에디토리얼 타이포그래피 -->
+                    <div class="lg:col-span-7 text-center lg:text-left">
+                        <p class="font-pinyon text-3xl sm:text-4xl text-gold-200/90 mb-1 tracking-wide">
+                            Empathy Meets Digital Innovation
+                        </p>
+                        
+                        <h1 class="font-script text-6xl sm:text-7xl lg:text-8xl text-gold-metallic leading-[1.08] py-2 drop-shadow-sm">
+                            Gayeong Kim
+                        </h1>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4 mt-2 mb-5">
+                            <span class="text-xl sm:text-2xl font-semibold tracking-wider text-white">김가영</span>
+                            <span class="hidden sm:inline text-gold-400/60">✦</span>
+                            <span class="font-serif italic text-lg sm:text-xl text-gold-200">
+                                Dankook University, Department of Nursing
+                            </span>
+                        </div>
+
+                        <p class="text-xs sm:text-sm uppercase tracking-[0.22em] text-gold-400 font-medium mb-6">
+                            Sophomore · 단국대학교 간호학과 2학년
+                        </p>
+
+                        <div class="gold-divider max-w-xl mx-auto lg:mx-0 mb-6"></div>
+
+                        <p class="text-zinc-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8 font-light">
+                            고요한 내면의 깊이와 따뜻한 소통의 온기를 겸비한 예비 간호사입니다. 
+                            <span class="font-serif italic text-gold-200 text-lg sm:text-xl">“A Nurse Who Listens with Heart &amp; Leads with Technology”</span>의 가치 아래, 
+                            사람을 향한 진심과 디지털 시대의 전문성을 함께 키워나가고 있습니다.
+                        </p>
+
+                        <!-- 핵심 키워드 배지 (영문 세리프 + 한글 조화) -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+                            <span class="px-4 py-2 rounded-full border border-gold-400/40 bg-gold-400/5 text-gold-200 text-xs sm:text-sm tracking-wide flex items-center gap-2">
+                                <span class="font-serif italic text-gold-400 text-base">01.</span> Nursing · 간호학
+                            </span>
+                            <span class="px-4 py-2 rounded-full border border-gold-400/40 bg-gold-400/5 text-gold-200 text-xs sm:text-sm tracking-wide flex items-center gap-2">
+                                <span class="font-serif italic text-gold-400 text-base">02.</span> Digital Innovation · 디지털 기술
+                            </span>
+                            <span class="px-4 py-2 rounded-full border border-gold-400/40 bg-gold-400/5 text-gold-200 text-xs sm:text-sm tracking-wide flex items-center gap-2">
+                                <span class="font-serif italic text-gold-400 text-base">03.</span> Warm Empathy · 공감과 신뢰
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="gold-divider max-w-6xl mx-auto"></div>
+
+        <!-- 2. ABOUT ME SECTION: Solitude & Recharge / Warm Connection -->
+        <section id="about" class="py-20 sm:py-28 px-5 sm:px-8 relative fade-up">
+            <div class="max-w-6xl mx-auto">
+                <!-- 섹션 헤더 -->
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="font-script text-4xl sm:text-5xl text-gold-metallic block mb-1">About Me</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-wide">
+                        Solitude &amp; Recharge <span class="italic text-gold-300 font-normal">vs.</span> Warm Connection
+                    </h2>
+                    <p class="text-xs sm:text-sm uppercase tracking-[0.22em] text-zinc-400 mt-3">
+                        고요한 재충전과 따뜻한 연결이 공존하는 입체적인 매력
+                    </p>
+                </div>
+
+                <!-- 에디토리얼 메인 인용구 카드 -->
+                <div class="luxury-card rounded-3xl p-8 sm:p-12 mb-8 text-center">
+                    <p class="font-serif italic text-2xl sm:text-3xl lg:text-4xl text-gold-200 leading-relaxed mb-4">
+                        “I cherish quiet hours of solitude at home to recharge my soul,<br class="hidden sm:inline"> yet I find vibrant joy in connecting deeply with people.”
+                    </p>
+                    <div class="w-16 h-px bg-gold-400/50 mx-auto my-5"></div>
+                    <p class="text-zinc-300 text-base sm:text-lg font-normal">
+                        “집에서 혼자 보내는 고요한 시간을 좋아하지만, 사람들과 소통하고 어울리는 것도 즐깁니다.”
+                    </p>
+                </div>
+
+                <!-- 2단 밸런스 카드 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+                    <!-- Solitude & Recharge -->
+                    <div class="luxury-card rounded-3xl p-8 sm:p-10">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="font-pinyon text-4xl text-gold-200">Solitude &amp; Recharge</span>
+                            <span class="w-11 h-11 rounded-full border border-gold-400/40 bg-gold-400/10 text-gold-300 flex items-center justify-center">
+                                <i data-lucide="moon" class="w-5 h-5"></i>
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">나만의 공간에서 길러내는 단단한 내면</h3>
+                        <p class="text-zinc-400 text-sm sm:text-base leading-relaxed font-light">
+                            집에서 홀로 보내는 고요한 시간은 저에게 가장 깊고 온전한 재충전입니다. 하루의 배움과 생각을 차분히 정돈하며 스스로를 돌아보는 이 시간 덕분에, 어떤 상황에서도 흔들리지 않는 평온한 중심을 유지합니다.
+                        </p>
+                    </div>
+
+                    <!-- Warm Connection -->
+                    <div class="luxury-card rounded-3xl p-8 sm:p-10">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="font-pinyon text-4xl text-gold-200">Warm Connection</span>
+                            <span class="w-11 h-11 rounded-full border border-gold-400/40 bg-gold-400/10 text-gold-300 flex items-center justify-center">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">진심 어린 대화로 이어지는 따뜻한 에너지</h3>
+                        <p class="text-zinc-400 text-sm sm:text-base leading-relaxed font-light">
+                            충분한 사색으로 채운 에너지는 사람들과 어울릴 때 밝고 따뜻한 온기로 피어납니다. 타인의 이야기에 진심으로 귀 기울이고 감정을 나누는 즐거움은 예비 간호사로서 환자와 깊이 교감하는 가장 소중한 자산입니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="gold-divider max-w-6xl mx-auto"></div>
+
+        <!-- 3. INTERESTS SECTION: Animation & Cinema -->
+        <section id="interests" class="py-20 sm:py-28 px-5 sm:px-8 relative fade-up">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+                    <div>
+                        <span class="font-script text-4xl sm:text-5xl text-gold-metallic block mb-1">Interests</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-white">
+                            Animation <span class="italic text-gold-300 font-normal">&amp;</span> Cinema
+                        </h2>
+                    </div>
+                    <p class="font-serif italic text-lg sm:text-xl text-zinc-400 max-w-md">
+                        Immersing in rich narratives and human emotions through visual storytelling.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Animation Card -->
+                    <div class="luxury-card rounded-3xl p-8 sm:p-10 group">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="font-serif italic text-sm tracking-[0.22em] uppercase text-gold-400">Chapter I · Visual Art</span>
+                            <div class="w-12 h-12 rounded-2xl border border-gold-400/35 bg-gold-400/10 text-gold-300 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i data-lucide="wand-2" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-script text-4xl sm:text-5xl text-gold-200 mb-2">Animation</h3>
+                        <h4 class="text-lg font-medium text-white mb-4">애니메이션 · 섬세한 서사와 순수한 감성</h4>
+                        <p class="text-zinc-400 text-sm sm:text-base leading-relaxed font-light">
+                            아름다운 작화와 깊이 있는 메시지가 담긴 애니메이션을 사랑합니다. 인물들이 시련을 딛고 성장하는 과정과 섬세한 감정선에 몰입하며, 타인의 마음을 더욱 따뜻하고 다정한 시선으로 바라보는 법을 배웁니다.
+                        </p>
+                    </div>
+
+                    <!-- Cinema Card -->
+                    <div class="luxury-card rounded-3xl p-8 sm:p-10 group">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="font-serif italic text-sm tracking-[0.22em] uppercase text-gold-400">Chapter II · Storytelling</span>
+                            <div class="w-12 h-12 rounded-2xl border border-gold-400/35 bg-gold-400/10 text-gold-300 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i data-lucide="film" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-script text-4xl sm:text-5xl text-gold-200 mb-2">Cinema</h3>
+                        <h4 class="text-lg font-medium text-white mb-4">영화 감상 · 다양한 삶과 감정의 이해</h4>
+                        <p class="text-zinc-400 text-sm sm:text-base leading-relaxed font-light">
+                            여러 장르의 영화를 감상하며 스크린 너머 다양한 사람들의 삶과 감정을 간접적으로 경험합니다. 한 편의 영화가 남기는 긴 여운은 인간에 대한 이해의 폭을 넓혀주는 소중한 영감이 됩니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="gold-divider max-w-6xl mx-auto"></div>
+
+        <!-- 4. STRENGTHS SECTION: Flexibility, Empathy & Collaboration -->
+        <section id="strengths" class="py-20 sm:py-28 px-5 sm:px-8 relative fade-up">
+            <!-- 은은한 골드 백라이트 -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-gold-400/[0.04] to-transparent pointer-events-none"></div>
+
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="font-script text-4xl sm:text-5xl text-gold-metallic block mb-1">Strengths</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-white">
+                        Flexibility, Empathy <span class="italic text-gold-300 font-normal">&amp;</span> Collaboration
+                    </h2>
+                    <p class="text-zinc-400 text-sm sm:text-base mt-3 font-light">
+                        변화하는 의료 현장 속에서 빛을 발하는 예비 간호사 김가영의 세 가지 핵심 역량
+                    </p>
+                </div>
+
+                <!-- 3단 럭셔리 골드 보더 카드 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+                    <!-- Strength 1: Flexibility -->
+                    <div class="luxury-card rounded-3xl p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <span class="font-serif italic text-3xl text-gold-400/85">I.</span>
+                                <span class="w-11 h-11 rounded-full border border-gold-400/40 bg-gold-400/10 text-gold-300 flex items-center justify-center">
+                                    <i data-lucide="compass" class="w-5 h-5"></i>
+                                </span>
+                            </div>
+                            <h3 class="font-script text-4xl sm:text-5xl text-gold-200 mb-1">Flexibility</h3>
+                            <h4 class="text-lg font-semibold text-white mb-4">융통성 · 유연한 상황 대처</h4>
+                            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed font-light">
+                                예기치 못한 변수와 급변하는 상황 앞에서도 침착하게 본질을 파악합니다. 고정된 틀에 얽매이지 않고 환자 개개인의 상태와 환경에 가장 적합한 최선의 대안을 유연하게 찾아냅니다.
+                            </p>
+                        </div>
+                        <div class="mt-7 pt-4 border-t border-gold-400/20 font-serif italic text-sm text-gold-200/85">
+                            Adaptable &amp; Composed Mindset
+                        </div>
+                    </div>
+
+                    <!-- Strength 2: Empathy -->
+                    <div class="luxury-card rounded-3xl p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <span class="font-serif italic text-3xl text-gold-400/85">II.</span>
+                                <span class="w-11 h-11 rounded-full border border-gold-400/40 bg-gold-400/10 text-gold-300 flex items-center justify-center">
+                                    <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                                </span>
+                            </div>
+                            <h3 class="font-script text-4xl sm:text-5xl text-gold-200 mb-1">Empathy</h3>
+                            <h4 class="text-lg font-semibold text-white mb-4">공감 능력 · 마음을 읽는 시선</h4>
+                            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed font-light">
+                                말로 다 표현하지 못한 작은 불안과 아픔까지 세심하게 헤아립니다. 환자를 단순한 증상이 아닌 한 사람의 존엄한 존재로 바라보며, 진심이 담긴 위로와 정서적 안정감을 전합니다.
+                            </p>
+                        </div>
+                        <div class="mt-7 pt-4 border-t border-gold-400/20 font-serif italic text-sm text-gold-200/85">
+                            Deeply Attentive &amp; Compassionate
+                        </div>
+                    </div>
+
+                    <!-- Strength 3: Collaboration -->
+                    <div class="luxury-card rounded-3xl p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <span class="font-serif italic text-3xl text-gold-400/85">III.</span>
+                                <span class="w-11 h-11 rounded-full border border-gold-400/40 bg-gold-400/10 text-gold-300 flex items-center justify-center">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </span>
+                            </div>
+                            <h3 class="font-script text-4xl sm:text-5xl text-gold-200 mb-1">Collaboration</h3>
+                            <h4 class="text-lg font-semibold text-white mb-4">협업 능력 · 조화로운 시너지</h4>
+                            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed font-light">
+                                다학제적 팀워크가 중요한 간호 현장에서 동료들의 의견을 존중하고 매끄럽게 소통합니다. 서로 다른 역량이 하나의 목표 아래 빛날 수 있도록 신뢰의 가교 역할을 수행합니다.
+                            </p>
+                        </div>
+                        <div class="mt-7 pt-4 border-t border-gold-400/20 font-serif italic text-sm text-gold-200/85">
+                            Harmonious Team Synergy
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="gold-divider max-w-6xl mx-auto"></div>
+
+        <!-- 5. HOBBIES SECTION: Cafe Hopping with Friends, Traveling & Tennis -->
+        <section id="hobbies" class="py-20 sm:py-28 px-5 sm:px-8 relative fade-up">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="font-script text-4xl sm:text-5xl text-gold-metallic block mb-1">Hobbies</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-white">
+                        Cafe Hopping, Traveling <span class="italic text-gold-300 font-normal">&amp;</span> Tennis
+                    </h2>
+                    <p class="text-xs sm:text-sm uppercase tracking-[0.22em] text-zinc-400 mt-3">
+                        일상에 감각과 활력을 불어넣는 취미 생활
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+                    <!-- Hobby 1: Cafe Hopping with Friends -->
+                    <div class="luxury-card rounded-3xl p-8 text-center">
+                        <div class="w-14 h-14 mx-auto rounded-full border border-gold-400/45 bg-gold-400/10 text-gold-300 flex items-center justify-center mb-5">
+                            <i data-lucide="coffee" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-script text-4xl text-gold-200 mb-1">Cafe Hopping</h3>
+                        <p class="text-base font-semibold text-white mb-3">친구들과 카페 가기</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed font-light">
+                            감각적인 공간에서 향긋한 커피와 함께 소중한 친구들과 대화를 나눕니다. 소소한 일상을 공유하며 얻는 따뜻한 힐링을 사랑합니다.
+                        </p>
+                    </div>
+
+                    <!-- Hobby 2: Traveling -->
+                    <div class="luxury-card rounded-3xl p-8 text-center">
+                        <div class="w-14 h-14 mx-auto rounded-full border border-gold-400/45 bg-gold-400/10 text-gold-300 flex items-center justify-center mb-5">
+                            <i data-lucide="globe" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-script text-4xl text-gold-200 mb-1">Traveling</h3>
+                        <p class="text-base font-semibold text-white mb-3">새로운 시야를 여는 여행</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed font-light">
+                            익숙한 일상을 벗어나 낯선 풍경과 문화를 마주하는 여행을 즐깁니다. 새로운 환경에서의 경험은 세상을 바라보는 시야와 유연성을 넓혀줍니다.
+                        </p>
+                    </div>
+
+                    <!-- Hobby 3: Tennis -->
+                    <div class="luxury-card rounded-3xl p-8 text-center">
+                        <div class="w-14 h-14 mx-auto rounded-full border border-gold-400/45 bg-gold-400/10 text-gold-300 flex items-center justify-center mb-5">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-script text-4xl text-gold-200 mb-1">Tennis</h3>
+                        <p class="text-base font-semibold text-white mb-3">활기찬 에너지를 채우는 테니스</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed font-light">
+                            코트 위를 달리며 땀을 흘리는 역동적인 스포츠, 테니스를 통해 건강한 체력과 강인한 집중력을 기르며 일상의 활력을 충전합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. MY GOAL SECTION: Bridging Digital Innovation & Compassionate Care -->
+        <section id="goal" class="py-20 sm:py-28 px-5 sm:px-8 relative fade-up">
+            <div class="max-w-6xl mx-auto">
+                <div class="relative rounded-[2.25rem] border border-gold-400/50 bg-gradient-to-br from-obsidian-850 via-obsidian-900 to-obsidian-950 p-8 sm:p-14 lg:p-16 shadow-gold-glow overflow-hidden">
+                    <!-- 코너 골드 장식 프레임 -->
+                    <div class="absolute top-5 left-5 w-8 h-8 border-t border-l border-gold-400/55 pointer-events-none"></div>
+                    <div class="absolute top-5 right-5 w-8 h-8 border-t border-r border-gold-400/55 pointer-events-none"></div>
+                    <div class="absolute bottom-5 left-5 w-8 h-8 border-b border-l border-gold-400/55 pointer-events-none"></div>
+                    <div class="absolute bottom-5 right-5 w-8 h-8 border-b border-r border-gold-400/55 pointer-events-none"></div>
+
+                    <!-- 은은한 금빛 후광 -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] bg-gold-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+                    <div class="relative z-10 max-w-4xl mx-auto text-center">
+                        <span class="font-script text-4xl sm:text-5xl text-gold-metallic block mb-1">My Goal</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-wide mb-8">
+                            Bridging Digital Innovation <span class="italic text-gold-300 font-normal">&amp;</span> Compassionate Care
+                        </h2>
+
+                        <!-- 핵심 비전 문장 (한글 & 영문 에디토리얼 매칭) -->
+                        <blockquote class="mb-8">
+                            <p class="text-xl sm:text-2xl lg:text-3xl font-medium text-gold-100 leading-relaxed mb-4">
+                                “앞으로 <span class="text-gold-300 font-semibold underline decoration-gold-400/55 underline-offset-8">디지털 기술을 잘 활용하면서도</span><br class="hidden sm:inline">
+                                <span class="text-gold-300 font-semibold">환자의 마음을 이해하고 신뢰받을 수 있는</span> 간호사가 되고 싶습니다.”
+                            </p>
+                            <p class="font-serif italic text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto">
+                                “A Nurse Who Listens with Heart &amp; Leads with Technology — embracing digital innovation while offering heartfelt empathy and unwavering trust to every patient.”
+                            </p>
+                        </blockquote>
+
+                        <div class="gold-divider max-w-md mx-auto my-8"></div>
+
+                        <!-- 2가지 핵심 목표 필러 -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
+                            <div class="rounded-2xl border border-gold-400/30 bg-obsidian-950/75 p-6 backdrop-blur-sm">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <i data-lucide="cpu" class="w-5 h-5 text-gold-400"></i>
+                                    <span class="font-serif italic text-xl text-gold-200">Digital Healthcare Mastery</span>
+                                </div>
+                                <p class="text-zinc-400 text-sm leading-relaxed font-light">
+                                    빠르게 진화하는 스마트 의료 환경과 디지털 기술을 능숙하게 활용하여 정확하고 안전한 환자 중심 간호를 실현합니다.
+                                </p>
+                            </div>
+
+                            <div class="rounded-2xl border border-gold-400/30 bg-obsidian-950/75 p-6 backdrop-blur-sm">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-gold-400"></i>
+                                    <span class="font-serif italic text-xl text-gold-200">Heartfelt Trust &amp; Care</span>
+                                </div>
+                                <p class="text-zinc-400 text-sm leading-relaxed font-light">
+                                    기술이 대신할 수 없는 따뜻한 눈맞춤과 깊은 공감으로 환자의 두려움을 어루만지고 가장 신뢰받는 동반자가 되겠습니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 럭셔리 블랙 & 골드 푸터 -->
+    <footer class="border-t border-gold-400/22 bg-obsidian-950 py-12 px-5 sm:px-8">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div>
+                <p class="font-script text-3xl text-gold-metallic">Gayeong Kim</p>
+                <p class="text-xs sm:text-sm text-zinc-400 mt-1 tracking-wide">
+                    김가영 · 단국대학교 간호학과 2학년 <span class="text-gold-400/50 mx-1.5">|</span> Dankook University, Department of Nursing
+                </p>
+            </div>
+            <div>
+                <a href="#profile" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold-400/45 bg-gold-400/5 text-xs font-serif italic tracking-wider text-gold-200 hover:bg-gold-400 hover:text-obsidian-950 transition-all duration-300">
+                    <span>Back to Top</span>
+                    <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 인터랙션 스크립트 -->
+    <script>
+        // 로컬 이미지 경로 격리 시 우아한 골드 프레임 대체 화면 및 클릭 업로드 안내 표시
+        function handleProfileImageError(imgElement) {
+            imgElement.onerror = null;
+            imgElement.src = 'https://placehold.co/600x800/0B0B0D/D4AF37?text=Gayeong+Kim';
+            const overlay = document.getElementById('photo-fallback-overlay');
+            if (overlay) {
+                overlay.classList.remove('hidden');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lucide 아이콘 초기화
+            lucide.createIcons();
+
+            // 프로필 사진 프레임 클릭 시 로컬 사진 즉시 미리보기 지원
+            const portraitTrigger = document.getElementById('portrait-trigger');
+            const profileFileInput = document.getElementById('profile-file-input');
+            const profilePhoto = document.getElementById('profile-photo');
+            const fallbackOverlay = document.getElementById('photo-fallback-overlay');
+
+            if (portraitTrigger && profileFileInput && profilePhoto) {
+                portraitTrigger.addEventListener('click', () => {
+                    profileFileInput.click();
+                });
+
+                portraitTrigger.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        profileFileInput.click();
+                    }
+                });
+
+                profileFileInput.addEventListener('change', (e) => {
+                    const file = e.target.files && e.target.files[0];
+                    if (!file) return;
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        profilePhoto.src = event.target.result;
+                        if (fallbackOverlay) {
+                            fallbackOverlay.classList.add('hidden');
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            // 모바일 네비게이션 토글
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 스크롤 시 부드러운 페이드인 애니메이션
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.12
+            });
+
+            document.querySelectorAll('.fade-up').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
